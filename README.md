@@ -2,7 +2,7 @@
 You can check the site on cloudfare hosting here: https://getfood-react-typescript.pages.dev/  
 
 
-This project is a React Typescript application that show a proposide website for a company that mainly deals with catering services. Application was made to fit both pc and mobile devices.
+This project is a React Typescript application that show a proposed website for a company that mainly deals with catering services. Application was made to fit both pc and mobile devices.
 
 
 Used technologies:  
