@@ -8,10 +8,8 @@ import ContactUs from "./scenes/contactUs";
 import Footer from "./scenes/footer";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
-  );
-  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+  const [selectedPage, setSelectedPage] = useState(SelectedPage.Home);
+  const [isTopOfPage, setIsTopOfPage] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-gray-20">
+    <div className="app ">
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}

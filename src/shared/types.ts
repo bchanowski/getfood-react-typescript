@@ -5,14 +5,14 @@ export enum SelectedPage {
   ContactUs = "contactus",
 }
 
-export interface BenefitType {
+export type BenefitType = {
   icon: JSX.Element;
   title: string;
   desc: string;
-}
+};
 
-export interface DietType {
+export type DietType = {
   name: string;
   desc?: string;
   image: string;
-}
+};

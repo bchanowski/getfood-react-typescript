@@ -1,5 +1,4 @@
 import { SelectedPage } from "@/shared/types";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
 const childVariant = {
@@ -27,14 +26,14 @@ const Benefit = ({ icon, title, desc, setSelectedPage }: Props) => {
       </div>
       <h4 className="font-bold">{title}</h4>
       <p className="my-3">{desc}</p>
-      <AnchorLink
+      <a
         onClick={() => setSelectedPage(SelectedPage.ContactUs)}
         href={`#${SelectedPage.ContactUs}`}
       >
         <p className="text-sm font-bold text-primary-500 underline hover:text-secondary-500">
           Learn More
         </p>
-      </AnchorLink>
+      </a>
     </motion.div>
   );
 };
