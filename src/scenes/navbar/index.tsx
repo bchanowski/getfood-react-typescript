@@ -23,7 +23,6 @@ const Navbar = ({ isTopOfPage }: Props) => {
             <img alt="logo" src={Logo} />
 
             {/* RIGHT SIDE */}
-
             <div className={`${flexBetween}  w-full max-md:hidden`}>
               <div className={`${flexBetween} gap-8 text-sm`}>
                 <NavbarItems />

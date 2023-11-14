@@ -26,7 +26,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="app ">
+    <div className="app">
       <Navbar isTopOfPage={isTopOfPage} />
       <Home />
       <Benefits />
