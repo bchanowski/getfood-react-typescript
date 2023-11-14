@@ -2,16 +2,15 @@ import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import DietsHeader from "./DietsHeader";
 import DietsSlider from "./DietsSlider";
+import { useAppDispatch } from "@/hooks";
+import { setSelectedPage } from "@/slices/selectedPage";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const OurDiets = ({ setSelectedPage }: Props) => {
+const OurDiets = () => {
+  const dispatch = useAppDispatch();
   return (
     <section id="ourdiets" className="w-full bg-primary-100 py-40">
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.OurDiets)}
+        onViewportEnter={() => dispatch(setSelectedPage(SelectedPage.OurDiets))}
       >
         <DietsHeader />
         <DietsSlider />

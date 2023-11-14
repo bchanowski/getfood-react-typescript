@@ -16,3 +16,7 @@ export type DietType = {
   desc?: string;
   image: string;
 };
+
+export type selectedPageType = {
+  pageName: string;
+};

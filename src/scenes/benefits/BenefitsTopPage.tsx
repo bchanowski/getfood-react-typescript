@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { benefits } from "./data";
 import HText from "@/shared/HText";
 import Benefit from "./Benefit";
-import { SelectedPage } from "@/shared/types";
 
 const container = {
   hidden: {},
@@ -11,11 +10,7 @@ const container = {
   },
 };
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const BenefitsTopPage = ({ setSelectedPage }: Props) => {
+const BenefitsTopPage = () => {
   return (
     <>
       <motion.div
@@ -50,7 +45,6 @@ const BenefitsTopPage = ({ setSelectedPage }: Props) => {
             icon={benefit.icon}
             title={benefit.title}
             desc={benefit.desc}
-            setSelectedPage={setSelectedPage}
           />
         ))}
       </motion.div>

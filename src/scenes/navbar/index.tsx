@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo.png";
-import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
 import NavbarItems from "./NavbarItems";
 
 type Props = {
   isTopOfPage: boolean;
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
   const flexBetween = "flex items-center justify-between ";
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
@@ -29,16 +26,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
             <div className={`${flexBetween}  w-full max-md:hidden`}>
               <div className={`${flexBetween} gap-8 text-sm`}>
-                <NavbarItems
-                  selectedPage={selectedPage}
-                  setSelectedPage={setSelectedPage}
-                />
+                <NavbarItems />
               </div>
               <div className={`${flexBetween} gap-8 `}>
                 <p>Sign In</p>
-                <ActionButton setSelectedPage={setSelectedPage}>
-                  Become a Member
-                </ActionButton>
+                <ActionButton>Become a Member</ActionButton>
               </div>
             </div>
 
@@ -61,10 +53,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             </button>
           </div>
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <NavbarItems
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <NavbarItems />
           </div>
         </div>
       )}

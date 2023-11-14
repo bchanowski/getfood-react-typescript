@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import ContactHeader from "./ContactHeader";
 import ContactForm from "./ContactForm";
 import ContactImage from "./ContactImage";
+import { useAppDispatch } from "../../hooks";
+import { setSelectedPage } from "@/slices/selectedPage";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactUs = () => {
+  const dispatch = useAppDispatch();
   return (
     <section id="contactus" className="pb-22 mx-auto w-5/6 pt-24 ">
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
+        onViewportEnter={() =>
+          dispatch(setSelectedPage(SelectedPage.ContactUs))
+        }
       >
         <ContactHeader />
         <div className="mt-10 justify-between gap-8 md:flex">

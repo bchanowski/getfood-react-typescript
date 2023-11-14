@@ -1,4 +1,6 @@
+import { useAppDispatch } from "@/hooks";
 import { SelectedPage } from "@/shared/types";
+import { setSelectedPage } from "@/slices/selectedPage";
 import { motion } from "framer-motion";
 
 const childVariant = {
@@ -10,10 +12,10 @@ type Props = {
   icon: JSX.Element;
   title: string;
   desc: string;
-  setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Benefit = ({ icon, title, desc, setSelectedPage }: Props) => {
+const Benefit = ({ icon, title, desc }: Props) => {
+  const dispatch = useAppDispatch();
   return (
     <motion.div
       className="mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
@@ -27,7 +29,7 @@ const Benefit = ({ icon, title, desc, setSelectedPage }: Props) => {
       <h4 className="font-bold">{title}</h4>
       <p className="my-3">{desc}</p>
       <a
-        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+        onClick={() => dispatch(setSelectedPage(SelectedPage.ContactUs))}
         href={`#${SelectedPage.ContactUs}`}
       >
         <p className="text-sm font-bold text-primary-500 underline hover:text-secondary-500">

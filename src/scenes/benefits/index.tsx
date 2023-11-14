@@ -2,19 +2,18 @@ import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import BenefitsTopPage from "./BenefitsTopPage";
 import BenefitsBottomPage from "./BenefitsBottomPage";
+import { useAppDispatch } from "@/hooks";
+import { setSelectedPage } from "@/slices/selectedPage";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Benefits = ({ setSelectedPage }: Props) => {
+const Benefits = () => {
+  const dispatch = useAppDispatch();
   return (
     <section id="benefits" className="mx-auto h-auto w-5/6 py-20">
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
+        onViewportEnter={() => dispatch(setSelectedPage(SelectedPage.Benefits))}
       >
-        <BenefitsTopPage setSelectedPage={setSelectedPage} />
-        <BenefitsBottomPage setSelectedPage={setSelectedPage} />
+        <BenefitsTopPage />
+        <BenefitsBottomPage />
       </motion.div>
     </section>
   );
