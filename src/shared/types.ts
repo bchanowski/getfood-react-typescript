@@ -17,6 +17,12 @@ export type DietType = {
   image: string;
 };
 
+export type TCustomHookType = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export type selectedPageType = {
   pageName: string;
 };

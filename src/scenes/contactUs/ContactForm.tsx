@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { customValidations } from "./validations";
 import { useForm } from "react-hook-form";
-
-type TCustomHookType = {
-  name: string;
-  email: string;
-  message: string;
-};
+import { TCustomHookType } from "@/shared/types";
 
 const ContactForm = () => {
   const inputStyles = `w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white mb-5`;
