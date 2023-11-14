@@ -8,6 +8,7 @@ This project is a React Typescript application that show a proposed website for 
 Used technologies:  
 - React Typescript
 - Vite
+- Redux Toolkit
 - Tailwind
 - Framer motion
 - React Hook Form
