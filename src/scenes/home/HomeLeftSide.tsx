@@ -2,12 +2,11 @@ import { motion } from "framer-motion";
 import ActionButton from "@/shared/ActionButton";
 import { SelectedPage } from "@/shared/types";
 import HomePageText from "@/assets/HomePageText.png";
+import { useAppDispatch } from "@/hooks";
+import { setSelectedPage } from "@/slices/selectedPage";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const HomeLeftSide = ({ setSelectedPage }: Props) => {
+const HomeLeftSide = () => {
+  const dispatch = useAppDispatch();
   return (
     <div className="z-10 mt-32 md:basis-3/5">
       <motion.div
@@ -43,9 +42,9 @@ const HomeLeftSide = ({ setSelectedPage }: Props) => {
           visible: { opacity: 1, x: 0 },
         }}
       >
-        <ActionButton setSelectedPage={setSelectedPage}>Join Now</ActionButton>
+        <ActionButton>Join Now</ActionButton>
         <a
-          onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+          onClick={() => dispatch(setSelectedPage(SelectedPage.ContactUs))}
           href={`#${SelectedPage.ContactUs}`}
         >
           <p className="text-sm font-bold text-primary-500 underline hover:text-secondary-500">

@@ -14,7 +14,7 @@ const Home = () => {
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
         onViewportEnter={() => dispatch(setSelectedPage(SelectedPage.Home))}
       >
-        <HomeLeftSide setSelectedPage={setSelectedPage} />
+        <HomeLeftSide />
         <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
           <img alt="home-pagegraphic" src={HomePageGraphic} />
         </div>
